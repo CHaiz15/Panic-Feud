@@ -11,7 +11,7 @@ class Survey {
     }, []).includes(playerGuess.toLowerCase())
   }
   findPoints(playerGuess) {
-    let matchingAnswer = this.answers.find(answer => answer.answer === playerGuess);
+    let matchingAnswer = this.answers.find(answer => answer.answer.toLowerCase() === playerGuess.toLowerCase());
     return matchingAnswer.respondents;
   }
 }

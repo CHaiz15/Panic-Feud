@@ -1,24 +1,28 @@
 import $ from 'jquery';
 
 class Player {
-  constructor() {
+  constructor(name, playerNum) {
     this.totalPoints = 0;
-    this.name;
-    this.playerNum;
+    this.name = name;
+    this.playerNum = playerNum;
     this.incorrectGuesses = [];
-    this.multiplier;
+    this.multiplier = 0;
   }
-  makeGuess() {
-
+  makeGuess(playerGuess, survey) {
+    if(survey.checkGuess(playerGuess)) {
+      this.addPoints(survey.findPoints(playerGuess))
+    } else {
+      this.incorrectGuesses.push(playerGuess);
+    }
   }
-  addPoints() {
-
+  addPoints(pointValue) {
+    this.totalPoints += pointValue;
   }
-  setMultiplier() {
-
+  setMultiplier(pickedMultiplier) {
+    this.multiplier = pickedMultiplier;
   }
   clearIncorrectGuess() {
-
+    this.incorrectGuesses = [];
   }
 }
 
