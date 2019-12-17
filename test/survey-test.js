@@ -45,7 +45,7 @@ describe('Survey:', () => {
       expect(survey.answers).to.equal(data.answers)
     });
     describe('Method Values:', () => {
-      it('should return true/flase whether the players guess is included', function() {
+      it('should return true/false whether the players guess is included', function() {
         playerGuess = 'Beer';
         expect(survey.checkGuess(playerGuess)).to.equal(true);
         playerGuess = 'A dog';
