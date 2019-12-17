@@ -1,6 +1,116 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+$primary-background: #050505;
+$primary-color: #dfdfdf;
+$secondary-color: #971313;
+$main-font: 'Finger Paint';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background-color: $primary-background;
+  background: center / cover no-repeat url('../images/hallway-with-window.jpg');
 }
+
+/* ********* HEADER ********* */
+
+header {
+  background-color: $primary-background;
+  color: $primary-color;
+  font-family: 'Creepster';
+  font-size: 2em;
+  text-align: center;
+}
+
+header h1 {
+  color: $secondary-color;
+}
+
+nav div {
+  float: left;
+  padding: .5em;
+}
+
+/* ********* MAIN CONTENT ********* */
+
+main {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: $primary-color;
+  font-family: $main-font;
+}
+
+/* ********* MAIN MENU SCREEN ********* */
+
+.main-menu {
+  align-items: center;
+  display: grid;
+  grid-column: 1fr;
+  grid-row: 1fr 2fr 1fr;
+  text-align: center;
+  height: 90vh;
+  // display: none;
+}
+
+.player-input {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.input-wrapper {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 2rem;
+  justify-content: center;
+}
+
+.player1-wrapper,
+.player2-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 4em;
+}
+
+.player-input {
+  background-color: $primary-color;
+  font-size: 1em;
+  font-family: $main-font;
+  width: 10em;
+}
+
+.player-button,
+.instruction-button {
+  justify-self: center;
+  font-family: $main-font;
+  font-size: 2em;
+  padding: .5em;
+  margin: 1em;
+  width: 20em;
+}
+
+/* ********* INSTRUCTIONS SCREEN ********* */
+
+.instructions {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 90vh;
+  // display: none;
+}
+
+.instructions h2 {
+  padding: 1em;
+}
+
+.instruction-content {
+  width: 70%;
+}
+
+.instruction-content p {
+  padding: .5em;
+}
+
