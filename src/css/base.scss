@@ -3,21 +3,24 @@ $primary-background: #050505;
 $primary-color: #dfdfdf;
 $secondary-color: #971313;
 $main-font: 'Rock Salt';
+@mixin columnFlexCenter() {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+}
 
 *,
-*::before,
-*::after {
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: center / cover no-repeat url('../images/hallway-with-window.jpg');
+  background: center / cover no-repeat url("../images/hallway-with-window.jpg");
 }
-
 /* ********* HEADER ********* */
-
 header {
   background-color: $primary-background;
   color: $primary-color;
@@ -32,19 +35,15 @@ header h1 {
 
 nav div {
   float: left;
-  padding: .5em;
+  padding: 0.5em;
 }
-
 /* ********* MAIN CONTENT ********* */
-
 main {
   background-color: rgba(0, 0, 0, 0.5);
   color: $primary-color;
   font-family: $main-font;
 }
-
 /* ********* MAIN MENU SCREEN ********* */
-
 .main-menu {
   align-items: center;
   display: grid;
@@ -81,22 +80,18 @@ main {
   width: 10em;
 }
 
-.player-button,
-.instruction-button {
+.instruction-button,
+.player-button {
   justify-self: center;
   font-family: $main-font;
   font-size: 2em;
-  padding: .5em;
+  padding: 0.5em;
   margin: 1em;
   width: 20em;
 }
-
 /* ********* INSTRUCTIONS SCREEN ********* */
-
 .instructions {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
+  @include columnFlexCenter();
   height: 90vh;
   display: none;
 }
@@ -110,11 +105,9 @@ main {
 }
 
 .instruction-content p {
-  padding: .5em;
+  padding: 0.5em;
 }
-
 /* ********** GAME SCREEN ********** */
-
 .game-screen {
   display: grid;
   font-size: 1.25rem;
@@ -124,14 +117,12 @@ main {
 }
 
 .player-screen {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
+  @include columnFlexCenter();
   justify-content: center;
 }
 
 .player-screen > * {
-  padding: .5em;
+  padding: 0.5em;
 }
 
 .wrong-guesses {
@@ -139,20 +130,16 @@ main {
 }
 
 .survey {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
+  @include columnFlexCenter();
 }
 
 .survey h2 {
-  margin-bottom: 1em; 
+  margin-bottom: 1em;
   padding: 1em;
 }
 
 .survey-answer-wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
+  @include columnFlexCenter();
   width: 100%;
 }
 
@@ -163,6 +150,6 @@ main {
   display: flex;
   justify-content: space-between;
   margin: 1.5em;
-  padding: .5em;
+  padding: 0.5em;
   width: 40%;
 }
