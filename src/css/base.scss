@@ -2,7 +2,7 @@
 $primary-background: #050505;
 $primary-color: #dfdfdf;
 $secondary-color: #971313;
-$main-font: 'Finger Paint';
+$main-font: 'Rock Salt';
 
 *,
 *::before,
@@ -48,11 +48,10 @@ main {
 .main-menu {
   align-items: center;
   display: grid;
-  grid-column: 1fr;
-  grid-row: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
   text-align: center;
   height: 90vh;
-  // display: none;
+  display: none;
 }
 
 .player-input {
@@ -99,7 +98,7 @@ main {
   display: flex;
   flex-flow: column nowrap;
   height: 90vh;
-  // display: none;
+  display: none;
 }
 
 .instructions h2 {
@@ -114,3 +113,56 @@ main {
   padding: .5em;
 }
 
+/* ********** GAME SCREEN ********** */
+
+.game-screen {
+  display: grid;
+  font-size: 1.25rem;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 90vh;
+  // display: none;
+}
+
+.player-screen {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.player-screen > * {
+  padding: .5em;
+}
+
+.wrong-guesses {
+  text-decoration: line-through;
+}
+
+.survey {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.survey h2 {
+  margin-bottom: 1em; 
+  padding: 1em;
+}
+
+.survey-answer-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+.survey-answer {
+  align-items: center;
+  background-color: #3f3f3f;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5em;
+  padding: .5em;
+  width: 40%;
+}
