@@ -1,13 +1,91 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Webpack Starter Kit</title>
+    <title>Panic Feud</title>
+    <link href="https://fonts.googleapis.com/css?family=Creepster|Finger+Paint|Rock+Salt&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
-
-    <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+    <header>
+      <nav>
+        <div>
+          <a class="navbar-toggle">&#9776;</a>
+        </div>
+        <ul hidden>
+          <li>Leader Board:</li>
+        </ul>
+      </nav>
+      <h1>Panic Feud</h1>
+    </header>
+    <main>
+      <section class="main-menu">
+        <h2>We need your name, victim.</h2>
+        <form class="player-entry">
+          <div class="input-wrapper">
+            <div class="player1-wrapper">
+              <label for="player1">Player 1:</label>
+              <input class="player-input" type="text" id="player1">
+            </div>
+            <div class="player2-wrapper">
+              <label for="player2">Player 2:</label>
+              <input class="player-input" type="text" id="player2">
+            </div>
+          </div>
+        </form>
+        <button class="player-button">Prepare Yourself</button>
+      </section>
+      <section class="instructions">
+        <h2>You have been taken captive...</h2>
+        <article class="instruction-content">
+            <p>Chainsaw dread full moon, pushed at alley bruises, children is knife. Sinister at creepy anxiety bite monster electrocution smashed in death. Evil Michael Myers decomposed corpse. Buried non guts claw and creature hair-raising decapitated at est. Killer scourge scared, drowning helpless sheep at, terrifying an.</p>
+            <p>Crazy gory. Trapped flesh grotesque squeal, bloodcurdling chilling hair-raising spooky hazardous daring. Haunt sliced at choking cut drool. Sinister at creepy anxiety bite monster electrocution smashed in death. Creep serial killer, bury a scourge menacing, pain bowels nightmare.</p>
+            <p>Killer mental psychotic sliced. screams exorcism oozed smashed. Shriek terror shadow, darkness in tense ac, Motionless drowning Full moon. Haunt tearing murder crying an mental corpse zombies evil, chainsaw motionless gory. Buried non guts claw and creature hair-raising decapitated at est. Gnarled hazardous, gore Michael Myers grave ripped, trapped daring rotten worms, vampire monstrosity bleak are at flesh. Serial killer, heart pumping at eyeballs killer dolls.</p>
+            <p>Smashed in death. Falling a spooky screaming. In the deranged Halloween slice. Pain needles commodo drool rabid nightmare. Children creepy deranged, ashes a killer a, monster mental hospital. Disembowel stab, chains dungeon torment fiendish, gruesome psychopath monster captive, a mutilation possession obsession at fanatic. Edginess anxiety tension, claw at deteriorated in, creep a tear. Killer scourge scared, drowning helpless sheep at, terrifying and crazy gory. Drenche.</p>
+        </article>
+        <button class="instruction-button">Lets Begin</button>
+      </section>
+      <section class="game-screen">
+        <aside class="player-screen">
+          <h3>Player 1 Name</h3>
+          <p>Total Score: 58</p>
+          <p>Round Score: 10</p>
+          <form>
+            <input class="player1-answer-input" type="text">
+          </form>
+          <div class="player1-multiplier multiplier">Multiplier Selector</div>
+          <div class="player1-wrong-guesses wrong-guesses">
+            <p>Booze</p>
+          </div>
+        </aside>
+        <section class="survey">
+          <h2 class="survey-question">Interpolated Survey Question</h2>
+          <div class="survey-answer-wrapper">
+            <div class="survey-answer">
+              <h3>Answer 1</h3>
+              <p>50</p>
+            </div>
+            <div class="survey-answer">
+              <h3>Answer 2</h3>
+              <p>50</p>
+            </div>
+            <div class="survey-answer">
+              <h3>Answer 3</h3>
+              <p>50</p>
+            </div>
+          </div>
+        </section>
+        <aside class="player-screen">
+            <h3>Player 2 Name</h3>
+            <p>Total Score: 58</p>
+            <p>Round Score: 10</p>
+            <form>
+              <input class="player2-answer-input" type="text">
+            </form>
+            <div class="player2-multiplier multiplier">Multiplier Selector</div>
+            <div class="player2-wrong-guesses wrong-guesses">
+              <p>Booze</p>
+            </div>
+          </aside>
+      </section>
+    </main>
   </body>
 </html>
