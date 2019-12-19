@@ -1,7 +1,7 @@
 class Survey {
   constructor(data) {
-    this.id = data.surveys[0].id;
-    this.question = data.surveys[0].question;
+    this.id = data.survey.id;
+    this.question = data.survey.question;
     this.answers = data.answers;
   }
   checkGuess(playerGuess) {
