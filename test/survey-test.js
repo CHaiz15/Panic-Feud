@@ -6,10 +6,10 @@ import Survey from '../src/scripts/Survey.js';
 describe('Survey:', () => {
   let survey;
   let data = {
-    surveys: [{
+    survey: {
       id: 1,
       question: 'If You Drew Homer Simpson’s Name In A Secret Santa Exchange, What Would You Buy Him?'
-    }, ],
+    },
     answers: [{
         answer: 'Beer',
         respondents: 67,
