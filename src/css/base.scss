@@ -27,35 +27,42 @@ header {
   font-family: 'Creepster';
   font-size: 2em;
   text-align: center;
+  h1 {
+    color: $secondary-color;
+  }
 }
 
-header h1 {
-  color: $secondary-color;
+nav {
+  div {
+    float: left;
+    padding: 0.5em;
+  }
+
+  ul {
+    list-style-type: none;
+  }
 }
 
-nav div {
-  float: left;
-  padding: 0.5em;
-}
 /* ********* MAIN CONTENT ********* */
+
 main {
   background-color: rgba(0, 0, 0, 0.5);
   color: $primary-color;
   font-family: $main-font;
 }
+
 /* ********* MAIN MENU SCREEN ********* */
 .main-menu {
   align-items: center;
   display: grid;
+  // display: none;
   grid-template-rows: 1fr 2fr 1fr;
-  text-align: center;
   height: 90vh;
-  display: none;
+  text-align: center;
 }
 
 .player-input {
-  display: flex;
-  flex-flow: column nowrap;
+  @include columnFlexCenter();
 }
 
 .input-wrapper {
@@ -70,14 +77,15 @@ main {
 .player2-wrapper {
   display: flex;
   flex-flow: column nowrap;
-  padding: 4em;
+  margin-bottom: 2.5em;
+  padding: 2em;
 }
 
 .player-input {
   background-color: $primary-color;
   font-size: 1em;
   font-family: $main-font;
-  width: 10em;
+  width: 15em;
 }
 
 .instruction-button,
@@ -93,11 +101,10 @@ main {
 .instructions {
   @include columnFlexCenter();
   height: 90vh;
-  display: none;
-}
-
-.instructions h2 {
-  padding: 1em;
+  // display: none;
+  h2 {
+    padding: 1em;
+  }
 }
 
 .instruction-content {
@@ -107,6 +114,7 @@ main {
 .instruction-content p {
   padding: 0.5em;
 }
+
 /* ********** GAME SCREEN ********** */
 .game-screen {
   display: grid;
@@ -119,10 +127,19 @@ main {
 .player-screen {
   @include columnFlexCenter();
   justify-content: center;
+  * {
+    padding: 0.5em;
+  }
 }
 
-.player-screen > * {
-  padding: 0.5em;
+.player1-screen {
+  margin-left: 1em;
+  transform: skewY(13deg);
+}
+
+.player2-screen {
+  margin-right: 1em;
+  transform: skewY(-13deg);
 }
 
 .wrong-guesses {
@@ -131,12 +148,12 @@ main {
 
 .survey {
   @include columnFlexCenter();
+  h2 {
+    margin-bottom: 1em;
+    padding: 1em;
+  }
 }
 
-.survey h2 {
-  margin-bottom: 1em;
-  padding: 1em;
-}
 
 .survey-answer-wrapper {
   @include columnFlexCenter();
@@ -146,10 +163,11 @@ main {
 .survey-answer {
   align-items: center;
   background-color: #3f3f3f;
-  border: 1px solid red;
+  border-radius: 1em;
+  box-shadow: 0em 0em 1.5em red;
   display: flex;
   justify-content: space-between;
   margin: 1.5em;
-  padding: 0.5em;
-  width: 40%;
+  padding: 0.5em 1em;
+  width: 50%;
 }
