@@ -16,8 +16,11 @@ import './scripts/domUpdates.js';
 // console.log('This is the JavaScript entry file - your code begins here.');
 
 import Game from '../src/scripts/Game.js';
+import Player from '../src/scripts/Player.js';
 
 let game;
+let newPlayer1;
+let newPlayer2;
 
 function getData() {
 fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/family-feud/data')
@@ -31,3 +34,8 @@ function startNewGame(data) {
   game = new Game(data);
 }
 
+$('.prepare-self').click(function() {
+  newPlayer1 = new Player($('#player1').val(), 1);
+  newPlayer2 = new Player($('#player2').val(), 2);
+  game.players = [newPlayer1, newPlayer2];
+})
