@@ -17,3 +17,4 @@ $('.lets-begin').click(function() {
     .hide()
     .fadeIn(500);
 });
+
