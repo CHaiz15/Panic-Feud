@@ -44,9 +44,9 @@ describe('Round', () => {
         ]
       };
 
-    // game = new Game()
+    // game = new Game(data);
     survey = new Survey(data);
-    round = new Round(survey, players, game);
+    round = new Round(survey, players);
     player1 = new Player('Lenny', 1);
     player2 = new Player('Tom', 2);
     players = [player1, player2];
@@ -57,7 +57,7 @@ describe('Round', () => {
   });
   describe('Default Values:', () => {
     it('Should take in one survey', () => {
-      expect(round.survey).to.be.an('string');
+      expect(round.survey.).to.be.an('string');
     });
 
     it('Should take in an array of answers', () => {
@@ -86,7 +86,7 @@ describe('Round', () => {
     });
 
     it.skip('Should start a new Round with a new survey each time', () => {
-      // game.startRound()
+      game.startRound()
       expect(round.)
     });
   })
