@@ -7,6 +7,7 @@ class Game {
     this.surveys = surveys;
     this.usedSurveyIds = [];
     this.players = [];
+    this.currentRound = undefined;
   }
   startRound() {
     let foundSurvey;
@@ -32,7 +33,7 @@ class Game {
     if (this.usedSurveyIds.length === 2) {
       startPanicRound(surveyObject);
     } else {
-      let round = new Round(surveyObject, this.players);
+      this.currentRound = new Round(surveyObject, this.players);
     }
     this.usedSurveyIds.push(randomId);
   }
