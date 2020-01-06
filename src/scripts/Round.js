@@ -1,11 +1,12 @@
 import $ from 'jquery';
+import Game from './Game.js';
 
-class Round {
-  constructor(survey, players, game) {
-    this.survey = survey.question;
+class Round extends Game {
+  constructor(survey, players) {
+    super()
+    this.survey = survey;
     this.answers = survey.answers;
-    this.totalSurvey = survey;
-    this.game = game;
+    // this.usedSurveys = usedSurveys; INHERITANCE?
     this.points = {player1: 0, player2: 0}
     this.currentPlayer = undefined;
     this.players = players;
@@ -25,16 +26,11 @@ class Round {
   }
 
   setStartingPlayer() {
-    this.currentPlayer = this.game.roundCounter
+    this.currentPlayer = game.usedSurveyIds.length
   }
 
   startRound() {
     setStartingPlayer();
-    let newRound
-    if (!game.usedSurveyIds.includes(this.totalSurvey.id)) {
-      // need to instantiate new round parameters with values from API
-      newRound = new Round(survey, players, game);
-    }
   }
 }
 
