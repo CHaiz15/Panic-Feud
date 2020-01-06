@@ -31,10 +31,10 @@ describe('Player:', () => {
     ]
   };
   let player1;
-  let name = 'Caleb';
+  let playerName = 'Caleb';
   let playerNum = 1;
   beforeEach(() => {
-    player1 = new Player(name, playerNum);
+    player1 = new Player(playerName, playerNum);
   });
   it('should be a function', function() {
     expect(Player).to.be.a('function');

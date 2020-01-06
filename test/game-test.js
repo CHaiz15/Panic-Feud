@@ -2,9 +2,12 @@ import chai from 'chai';
 const expect = chai.expect;
 
 import Game from '../src/scripts/Game.js';
+import Player from '../src/scripts/Player.js';
 
 describe('Game', () => {
   let game;
+  let newPlayer1;
+  let newPlayer2;
   let data = {response_code: {
       version: '1.5',
       termsofService: 'http://frontend.turing.io/projects/family-feud.html',
@@ -76,6 +79,8 @@ describe('Game', () => {
 
   beforeEach(() => {
     game = new Game(data);
+    newPlayer1 = new Player('Gunther', 1);
+    newPlayer2 = new Player('Shirley', 2);
   });
   it('should be a function', function() {
     expect(Game).to.be.a('function');
@@ -86,6 +91,10 @@ describe('Game', () => {
     });
     it('should start with an object containing an array of surveys', function() {
       expect(game.surveys).to.deep.equal(data);
+    });
+    it('should start with an array of the 2 players', function() {
+      game.players = [newPlayer1, newPlayer2];
+      expect(game.players.length).to.deep.equal(2);
     });
     describe('Method Values:', () => {
       it('should push an id to usedSurveyIds', function() {
