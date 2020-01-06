@@ -1,5 +1,6 @@
 
 $primary-background: hsla(240, 9%, 4%, 100%);
+$secondary-background: hsla(0, 0%, 25%, 100%);
 $primary-color: hsla(0, 0%, 87%, 100%);
 $secondary-color: hsla(0, 78%, 33%, 100%);
 $main-font: 'Rock Salt';
@@ -167,11 +168,23 @@ main {
 }
 
 .player1-answer-input,
-.player2-answer-input {
+.player2-answer-input,
+.submit-answer {
   border-radius: .25em;
-  font-size: 1em;
+  font-family: $main-font;
+  font-size: .75em;
+  margin: .25em;
+  width: 100%;
   &:focus {
     @include focusColor();
+  }
+}
+
+.submit-answer {
+  background-color: $primary-color;
+  &:hover {
+    background-color: $secondary-background;
+    color: $primary-color;
   }
 }
 
@@ -204,7 +217,7 @@ main {
 .survey-answer {
   @include focusColor();
   align-items: center;
-  background-color: #3f3f3f;
+  background-color: $secondary-background;
   border-radius: 1em;
   display: flex;
   justify-content: space-between;
