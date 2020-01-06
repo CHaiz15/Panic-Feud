@@ -1,10 +1,11 @@
 import $ from 'jquery';
 import Game from './Game.js';
 
-class Round extends Game {
+// class Round extends Game {
+class Round {
   constructor(survey, players) {
-    super()
-    this.survey = survey;
+    // super()
+    this.survey = survey.survey;
     this.answers = survey.answers;
     // this.usedSurveys = usedSurveys; INHERITANCE?
     this.points = {player1: 0, player2: 0}
@@ -31,6 +32,10 @@ class Round extends Game {
 
   startRound() {
     setStartingPlayer();
+  }
+
+  sortAnswers() {
+    this.answers.sort((a, b) => {return b.respondents - a.respondents});
   }
 }
 

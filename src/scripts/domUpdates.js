@@ -20,9 +20,10 @@ $('.lets-begin').click(function() {
     .fadeIn(500);
 });
 
-const populateSurveyAndAnswers = (round) => {
+export const populateSurveyAndAnswers = (round) => {
+  console.log(round);
   $('.survey').html(`
-  <h2 class="survey-question">${round.survey}</h2>
+  <h2 class="survey-question">${round.survey.question}</h2>
     <div class="survey-answer-wrapper">
       <div class="survey-answer answer1">
         <h3>${round.answers[0].answer}</h3>
@@ -40,17 +41,19 @@ const populateSurveyAndAnswers = (round) => {
   `)
 }
 
-const populatePlayerInformation = (player) => {
-  $('player1-screen').html(`
+export const populatePlayerInformation = (player, num) => {
+  $(`.player${num}-screen`).html(`
     <h3>${player.name}</h3>
     <p>Total Score: 0</p>
     <p>Round Score: 0</p>
     <form>
-      <input class="player1-answer-input" type="text">
+      <input class="player${num}-answer-input" type="text">
+      <button class="submit-answer">Submit Answer</button>
     </form>
-    <div class="player1-multiplier multiplier">Multiplier Selector</div>
+    <div class="player${num}-multiplier multiplier">Multiplier Selector</div>
     <p>Incorrect guesses:</p>
-    <div class="player1-wrong-guesses wrong-guesses">
+    <div class="player${num}-wrong-guesses wrong-guesses">
     </div>
   `)
 }
+
