@@ -10,35 +10,15 @@ class Game {
     this.usedSurveyIds = [];
     this.players = [];
     this.currentRound;
-    this.currentSurvey;
   }
-  createSurvey() {
-    let foundSurvey;
-    let foundAnswers = [];
-    let randomId = Math.floor(Math.random() * 15) + 1;
-    this.surveys.surveys.find(survey => {
-      if (survey.id === randomId) {
-        foundSurvey = survey;
-      }
-    })
-    this.surveys.answers.filter(answer => {
-      if (answer.surveyId === randomId) {
-        foundAnswers.push(answer);
-      }
-    })
-    let surveyObject = {
-      survey: foundSurvey,
-      answers: foundAnswers
-    }
-    this.currentSurvey = new Survey(surveyObject);
-  }
-    startRound() {
+  startRound() {
     if (this.usedSurveyIds.length === 2) {
+      // needs refactor based on survey instantiation
       startPanicRound(this.currentSurvey);
     } else {
-      this.currentRound = new Round(this.currentSurvey, this.players);
+      this.currentRound = new Round(this.surveys, this.players);
     }
-    this.usedSurveyIds.push(this.currentSurvey.id);
+    this.usedSurveyIds.push(this.currentRound.currentSurvey.id);
   }
   startPanicRound(surveyObject) {
     let panicRound = new PanicRound(this.currentSurvey);

@@ -45,7 +45,7 @@ export const populatePlayerInformation = (player, num) => {
     <p>Round Score: 0</p>
     <form>
       <input class="player${num}-answer-input" type="text">
-      <button class="submit-answer">Submit Answer</button>
+      <button class="submit-answer p${num}-submit-answer">Submit Answer</button>
     </form>
     <div class="player${num}-multiplier multiplier">Multiplier Selector</div>
     <p>Incorrect guesses:</p>
