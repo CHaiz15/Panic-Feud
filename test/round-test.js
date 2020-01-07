@@ -53,14 +53,6 @@ describe('Round', () => {
     expect(Round).to.be.a('function');
   });
   describe('Default Values:', () => {
-    it('Should take in one question', () => {
-      expect(round.question).to.equal(survey.question);
-    });
-
-    it('Should take in an array of answers', () => {
-      expect(round.answers).to.equal(survey.answers);
-    });
-
     it('Should default the player/s points to 0', () => {
       expect(round.points.player1).to.equal(0);
     });
