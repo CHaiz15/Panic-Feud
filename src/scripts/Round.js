@@ -5,8 +5,6 @@ import Survey from './Survey.js';
 
 class Round {
   constructor(survey, players) {
-    this.question = survey.question;
-    this.answers = survey.answers;
     this.points = {player1: 0, player2: 0}
     this.currentPlayer = undefined;
     this.players = players;
@@ -31,10 +29,6 @@ class Round {
 
   startRound() {
     setStartingPlayer();
-  }
-
-  sortAnswers() {
-    this.answers.sort((a, b) => {return b.respondents - a.respondents});
   }
 }
 

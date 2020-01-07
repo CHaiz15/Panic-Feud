@@ -2,7 +2,7 @@ class Survey {
   constructor(data) {
     this.id = data.survey.id;
     this.question = data.survey.question;
-    this.answers = data.answers;
+    this.answers = data.answers.sort((a, b) => {return b.respondents - a.respondents});
   }
   checkGuess(playerGuess) {
     return this.answers.reduce((acc, answer) => {
