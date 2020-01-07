@@ -12,7 +12,7 @@ class Game {
     this.currentRound;
     this.currentSurvey;
   }
-  startRound() {
+  createSurvey() {
     let foundSurvey;
     let foundAnswers = [];
     let randomId = Math.floor(Math.random() * 15) + 1;
@@ -31,12 +31,14 @@ class Game {
       answers: foundAnswers
     }
     this.currentSurvey = new Survey(surveyObject);
+  }
+    startRound() {
     if (this.usedSurveyIds.length === 2) {
       startPanicRound(this.currentSurvey);
     } else {
       this.currentRound = new Round(this.currentSurvey, this.players);
     }
-    this.usedSurveyIds.push(randomId);
+    this.usedSurveyIds.push(this.currentSurvey.id);
   }
   startPanicRound(surveyObject) {
     let panicRound = new PanicRound(this.currentSurvey);
