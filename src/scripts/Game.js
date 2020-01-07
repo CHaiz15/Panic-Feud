@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import Round from './Round.js';
+import Survey from './Survey.js';
+
 
 
 class Game {
@@ -7,38 +9,37 @@ class Game {
     this.surveys = surveys;
     this.usedSurveyIds = [];
     this.players = [];
-    this.currentRound = undefined;
+    this.currentRound;
+    this.currentSurvey;
   }
   startRound() {
     let foundSurvey;
     let foundAnswers = [];
     let randomId = Math.floor(Math.random() * 15) + 1;
-
     this.surveys.surveys.find(survey => {
       if (survey.id === randomId) {
         foundSurvey = survey;
       }
     })
-
     this.surveys.answers.filter(answer => {
       if (answer.surveyId === randomId) {
         foundAnswers.push(answer);
       }
     })
-
     let surveyObject = {
       survey: foundSurvey,
       answers: foundAnswers
     }
+    this.currentSurvey = new Survey(surveyObject);
     if (this.usedSurveyIds.length === 2) {
-      startPanicRound(surveyObject);
+      startPanicRound(this.currentSurvey);
     } else {
-      this.currentRound = new Round(surveyObject, this.players);
+      this.currentRound = new Round(this.currentSurvey, this.players);
     }
     this.usedSurveyIds.push(randomId);
   }
   startPanicRound(surveyObject) {
-    let panicRound = new PanicRound(surveyObject);
+    let panicRound = new PanicRound(this.currentSurvey);
   }
   endGame() {
     // Invoke display endGame function to Display the winner on the DOM.
