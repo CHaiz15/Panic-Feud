@@ -44,9 +44,13 @@ $('.prepare-self').click(function() {
 })
 
 $('.lets-begin').click(function() {
-  game.createSurvey();
   game.startRound();
-  populateSurveyAndAnswers(game.currentSurvey);
+  game.currentRound.createSurvey();
+  populateSurveyAndAnswers(game.currentRound.currentSurvey);
   populatePlayerInformation(game.players[0], 1);
   populatePlayerInformation(game.players[1], 2);
 })
+// 
+// $('.p1-submit-answer').click(function() {
+//   game.currentSurvey
+// })
