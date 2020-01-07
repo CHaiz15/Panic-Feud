@@ -1,7 +1,5 @@
 import $ from 'jquery';
 
-
-
 $('.prepare-self').click(function() {
   $('.main-menu').fadeOut(500);
   $('.instructions')
@@ -21,9 +19,8 @@ $('.lets-begin').click(function() {
 });
 
 export const populateSurveyAndAnswers = (round) => {
-  console.log(round);
   $('.survey').html(`
-  <h2 class="survey-question">${round.survey.question}</h2>
+  <h2 class="survey-question">${round.question}</h2>
     <div class="survey-answer-wrapper">
       <div class="survey-answer answer1">
         <h3>${round.answers[0].answer}</h3>
@@ -56,4 +53,3 @@ export const populatePlayerInformation = (player, num) => {
     </div>
   `)
 }
-
