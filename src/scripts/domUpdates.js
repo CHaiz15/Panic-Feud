@@ -18,21 +18,21 @@ $('.lets-begin').click(function() {
     .fadeIn(500);
 });
 
-export const populateSurveyAndAnswers = (round) => {
+export const populateSurveyAndAnswers = (survey) => {
   $('.survey').html(`
-  <h2 class="survey-question">${round.question}</h2>
+  <h2 class="survey-question">${survey.question}</h2>
     <div class="survey-answer-wrapper">
       <div class="survey-answer answer1">
-        <h3>${round.answers[0].answer}</h3>
-        <p>${round.answers[0].respondents}</p>
+        <h3>${survey.answers[0].answer}</h3>
+        <p>${survey.answers[0].respondents}</p>
       </div>
       <div class="survey-answer answer2">
-        <h3>${round.answers[1].answer}</h3>
-        <p>${round.answers[1].respondents}</p>
+        <h3>${survey.answers[1].answer}</h3>
+        <p>${survey.answers[1].respondents}</p>
       </div>
       <div class="survey-answer answer3">
-        <h3>${round.answers[2].answer}</h3>
-        <p>${round.answers[2].respondents}</p>
+        <h3>${survey.answers[2].answer}</h3>
+        <p>${survey.answers[2].respondents}</p>
       </div>
     </div>
   `)

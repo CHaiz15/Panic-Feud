@@ -13,6 +13,8 @@ import './images/turing-logo.png';
 import Game from '../src/scripts/Game.js';
 import Player from '../src/scripts/Player.js';
 import Round from '../src/scripts/Round.js';
+import Survey from '../src/scripts/Survey.js';
+
 
 import {populateSurveyAndAnswers, populatePlayerInformation} from '../src/scripts/domUpdates.js';
 
@@ -42,9 +44,9 @@ $('.prepare-self').click(function() {
 })
 
 $('.lets-begin').click(function() {
+  game.createSurvey();
   game.startRound();
-  game.currentRound.sortAnswers();
-  populateSurveyAndAnswers(game.currentRound);
+  populateSurveyAndAnswers(game.currentSurvey);
   populatePlayerInformation(game.players[0], 1);
   populatePlayerInformation(game.players[1], 2);
 })
