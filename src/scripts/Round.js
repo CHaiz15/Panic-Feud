@@ -4,9 +4,9 @@ import Survey from './Survey.js';
 
 
 class Round {
-  constructor(survey, players) {
+  constructor(survey, players, startingPlayer) {
     this.points = {player1: 0, player2: 0}
-    this.currentPlayer = undefined;
+    this.currentPlayer = startingPlayer;
     this.players = players;
     this.guessFlag = false;
     this.currentSurvey = survey;
@@ -31,24 +31,30 @@ class Round {
     }
     this.currentSurvey = new Survey(surveyObject);
   }
-  takeTurn(guessResult) {
+  takeTurn(guessResult, survey) {
+    let selectedPlayer = this.players[parseInt(this.currentPlayer - 1)];
+    let trueFalse = selectedPlayer.makeGuess(guessResult, survey);
+    console.log(trueFalse);
     let player = this.players.filter(player => {
-      return player.playerNum !== this.currentPlayer
+      return player.playerNum !== this.currentPlayer;
     })
-    if (guessResult) {
+    if (trueFalse) {
       this.guessFlag = true;
+      this.addPlayerRoundScore(selectedPlayer);
+      console.log(this.points);
     } else {
       this.guessFlag = false;
       this.currentPlayer = player[0].playerNum;
+      console.log(this.points);
     }
   }
 
-  setStartingPlayer() {
-    this.currentPlayer = game.usedSurveyIds.length
-  }
+  // setStartingPlayer() {
+  //   this.currentPlayer++;
+  // }
 
-  startRound() {
-    setStartingPlayer();
+  addPlayerRoundScore(selectedPlayer) {
+    this.points[`player${this.currentPlayer}`] += selectedPlayer.lastCorrectGuessPoints;
   }
 }
 
