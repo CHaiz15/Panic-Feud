@@ -27,7 +27,7 @@ class Game {
     let panicPlayer;
     if ((this.players[0].totalPoints > this.players[1].totalPoints) && this.players[0].playedPanic === false) {
       panicPlayer = this.players[0];
-    } else if ((this.players[1].totalPoints > this.players[0].totalPoints) && this.players[1].playedPanic === false)) {
+    } else if ((this.players[1].totalPoints > this.players[0].totalPoints) && this.players[1].playedPanic === false) {
     panicPlayer = this.players[1];
   }
   this.currentRound = new PanicRound(this.surveys, panicPlayer);
