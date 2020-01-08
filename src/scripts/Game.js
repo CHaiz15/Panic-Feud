@@ -12,11 +12,16 @@ class Game {
     this.currentRound;
   }
   startRound() {
+    // this.usedSurveyIds.push(this.currentRound.currentSurvey.id);
     if (this.usedSurveyIds.length === 2) {
       // needs refactor based on survey instantiation
       startPanicRound(this.currentSurvey);
+    } else if (this.usedSurveyIds.length === 1) {
+      console.log(this.usedSurveyIds.length);
+      this.currentRound = new Round(this.surveys, this.players, 2);
     } else {
-      this.currentRound = new Round(this.surveys, this.players);
+      console.log(this.usedSurveyIds.length);
+      this.currentRound = new Round(this.surveys, this.players, 1);
     }
     this.usedSurveyIds.push(this.currentRound.currentSurvey.id);
   }

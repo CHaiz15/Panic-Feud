@@ -50,7 +50,11 @@ $('.lets-begin').click(function() {
   populatePlayerInformation(game.players[0], 1);
   populatePlayerInformation(game.players[1], 2);
 })
-// 
-// $('.p1-submit-answer').click(function() {
-//   game.currentSurvey
-// })
+
+$('.p1-submit-answer').click(function() {
+  game.currentRound.takeTurn($('.player1-answer-input').val(), game.currentRound.currentSurvey);
+});
+
+$('.p2-submit-answer').click(function() {
+  game.currentRound.takeTurn($('.player2-answer-input').val(), game.currentRound.currentSurvey);
+});

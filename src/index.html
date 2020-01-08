@@ -45,11 +45,35 @@
         <button class="player-button lets-begin">Lets Begin</button>
       </section>
       <section class="game-screen">
-        <aside class="player-screen player1-screen"></aside>
+        <aside class="player-screen player1-screen">
+          <h3 class="player1-name"></h3>
+          <p>Total Score: 0</p>
+          <p>Round Score: 0</p>
+          <form>
+            <input class="player1-answer-input" type="text">
+            <button class="submit-answer p1-submit-answer" type="button">Submit Answer</button>
+          </form>
+          <div class="player1-multiplier multiplier">Multiplier Selector</div>
+          <p>Incorrect guesses:</p>
+          <div class="player1-wrong-guesses wrong-guesses">
+          </div>
+        </aside>
         <section class="survey"></section>
-        <aside class="player-screen player2-screen"></aside>
+        <aside class="player-screen player2-screen">
+          <h3 class="player2-name"></h3>
+          <p>Total Score: 0</p>
+          <p>Round Score: 0</p>
+          <form>
+            <input class="player2-answer-input" type="text">
+            <button class="submit-answer p2-submit-answer" type="button">Submit Answer</button>
+          </form>
+          <div class="player2-multiplier multiplier">Multiplier Selector</div>
+          <p>Incorrect guesses:</p>
+          <div class="player2-wrong-guesses wrong-guesses">
+          </div>
+        </aside>
       </section>
-      <section class="panic-round">
+    <section class="panic-round">
         <h2>PlayerName, You have <span class="panic-timer">30</span> Seconds</h2>
         <div class="panic-round-screen">
           <aside class="panic-player">

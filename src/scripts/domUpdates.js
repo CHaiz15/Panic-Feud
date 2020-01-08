@@ -39,19 +39,7 @@ export const populateSurveyAndAnswers = (survey) => {
 }
 
 export const populatePlayerInformation = (player, num) => {
-  $(`.player${num}-screen`).html(`
-    <h3>${player.name}</h3>
-    <p>Total Score: 0</p>
-    <p>Round Score: 0</p>
-    <form>
-      <input class="player${num}-answer-input" type="text">
-      <button class="submit-answer p${num}-submit-answer">Submit Answer</button>
-    </form>
-    <div class="player${num}-multiplier multiplier">Multiplier Selector</div>
-    <p>Incorrect guesses:</p>
-    <div class="player${num}-wrong-guesses wrong-guesses">
-    </div>
-  `)
+  $(`.player${num}-name`).text(`${player.name}`);
 }
 
 $('.multiplier').on('change', function() {
