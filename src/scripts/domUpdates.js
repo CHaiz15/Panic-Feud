@@ -41,3 +41,7 @@ export const populateSurveyAndAnswers = (survey) => {
 export const populatePlayerInformation = (player, num) => {
   $(`.player${num}-name`).text(`${player.name}`);
 }
+
+$('.multiplier').on('change', function() {
+  $('#multi-value').text($('.multiplier').val() + 'x');
+})

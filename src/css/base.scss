@@ -169,6 +169,7 @@ main {
 
 .player1-answer-input,
 .player2-answer-input,
+.playerp-answer-input,
 .submit-answer {
   border-radius: .25em;
   font-family: $main-font;
@@ -201,7 +202,8 @@ main {
   }
 }
 
-.survey {
+.survey,
+.panic-survey {
   @include columnFlexCenter();
   h2 {
     margin-bottom: 1em;
@@ -223,5 +225,68 @@ main {
   justify-content: space-between;
   margin: 1.5em;
   padding: 0.5em 1em;
-  width: 50%;
+  width: 60%;
+}
+
+/* ********** PANIC ROUND SCREEN ********** */
+
+.panic-round,
+.panic-round-screen {
+  @include columnFlexCenter();
+}
+
+.panic-round {
+  display: none;
+  height: calc(100vh - 75px);
+}
+
+.panic-round > h2 {
+  font-size: 2em;
+  margin-top: 2em;
+}
+
+.panic-timer,
+.multiplier,
+#multi-value {
+  color: $secondary-color;
+}
+
+.multiplier {
+  width: 60%;
+}
+
+.panic-round-screen {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+}
+
+.panic-player {
+  @include columnFlexCenter();
+  font-size: 1.25em;
+  width: 100%;
+}
+
+
+/* ********** END GAME SCREEN ********** */
+
+.end-game-screen {
+  @include columnFlexCenter();
+  display: none;
+  height: calc(100vh - 75px);
+  text-align: center;
+}
+
+.winner-banner,
+.loser-banner {
+  margin: 1em;
+}
+
+.winner-banner {
+  font-size: 2em;
+}
+
+.loser-banner {
+  color: $secondary-color;
+  font-size: 1.25em;
 }
