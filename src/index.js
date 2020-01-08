@@ -52,5 +52,9 @@ $('.lets-begin').click(function() {
 })
 
 $('.p1-submit-answer').click(function() {
-  game.players[0].makeGuess($('.player1-answer-input').val(), game.currentRound.currentSurvey)
+  game.currentRound.takeTurn($('.player1-answer-input').val(), game.currentRound.currentSurvey);
+});
+
+$('.p2-submit-answer').click(function() {
+  game.currentRound.takeTurn($('.player2-answer-input').val(), game.currentRound.currentSurvey);
 });
