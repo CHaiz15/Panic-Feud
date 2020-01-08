@@ -1,6 +1,6 @@
 # Panic-Feud
 
-## A project by 2 FE mod 2 students at Turing School of Software & Design. 
+## A project by 3 FE mod 2 students at Turing School of Software & Design. 
 
 ### Learning Goals:
 * Write a program from scratch
