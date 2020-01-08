@@ -30,6 +30,20 @@ Panic Round Screen:<img width="1440" alt="Screen Shot 2020-01-08 at 9 09 26 AM" 
   * Google
   * GitHub
   * Webpack
+ 
+### Successes: 
+  * Clean and easy to use interface.
+  * Vastly Improved upon prior knowledge of classes.
+  * Use of jQuery, SCSS, and webpack for the first time successfully.
+  
+### Future Improvements: 
+  * Continue building out testing suite.
+  * Complete the connnection of logic to dom manipulation.
+    1. Answers are hidden initially. Flipped/revealed to users when correct answer is guessed.
+    2. Finish displaying data on panic round screen. 
+    3. Display the end game screen when panic round is over.
+    4. Incorporate the use of high scores api
+  
   
 ### How to setup:
   1. Clone repo
