@@ -58,3 +58,7 @@ $('.p1-submit-answer').click(function() {
 $('.p2-submit-answer').click(function() {
   game.currentRound.takeTurn($('.player2-answer-input').val(), game.currentRound.currentSurvey);
 });
+
+$('.pp-submit-answer').click(function() {
+  game.currentRound.panicGuess($('.playerp-answer-input').val(), game.currentRound.currentSurvey)
+})
