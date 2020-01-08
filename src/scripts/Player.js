@@ -3,7 +3,7 @@ import $ from 'jquery';
 class Player {
   constructor(playerName, playerNum) {
     this.totalPoints = 0;
-    this.lastCorrectGuessPoints = 0
+    this.lastCorrectGuessPoints = 0;
     this.name = playerName;
     this.playerNum = playerNum;
     this.incorrectGuesses = [];
@@ -13,10 +13,10 @@ class Player {
     let trueFalse = survey.checkGuess(playerGuess)
     if(trueFalse) {
       this.addPoints(survey.findPoints(playerGuess));
-      return trueFalse;
+      return [trueFalse, playerGuess];
     } else {
       this.incorrectGuesses.push(playerGuess);
-      return trueFalse;
+      return [trueFalse, playerGuess];
     }
   }
   addPoints(pointValue) {
