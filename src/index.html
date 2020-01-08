@@ -1,134 +1,139 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <title>Panic Feud</title>
-    <link href="https://fonts.googleapis.com/css?family=Creepster|Finger+Paint|Rock+Salt&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div>
-          <a class="navbar-toggle">&#9776;</a>
-        </div>
-        <ul hidden>
-          <li>Leader Board:</li>
-          <li>Restart Game &#10227;</li>
-          <li>Quit Game &#9166;</li>
-        </ul>
-      </nav>
-      <h1>Panic Feud</h1>
-    </header>
-    <main>
-      <section class="main-menu">
-        <h2>We need your name, victim.</h2>
-        <form class="player-entry">
-          <div class="input-wrapper">
-            <div class="player1-wrapper">
-              <label for="player1">Player 1:</label>
-              <input class="player-input" type="text" id="player1">
-            </div>
-            <div class="player2-wrapper">
-              <label for="player2">Player 2:</label>
-              <input class="player-input" type="text" id="player2">
-            </div>
+
+<head>
+  <title>Panic Feud</title>
+  <link href="https://fonts.googleapis.com/css?family=Creepster|Finger+Paint|Rock+Salt&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div>
+        <a class="navbar-toggle">&#9776;</a>
+      </div>
+      <ul hidden>
+        <li>Leader Board:</li>
+        <li>Restart Game &#10227;</li>
+        <li>Quit Game &#9166;</li>
+      </ul>
+    </nav>
+    <h1>Panic Feud</h1>
+  </header>
+  <main>
+    <section class="main-menu">
+      <h2>We need your name, victim.</h2>
+      <form class="player-entry">
+        <div class="input-wrapper">
+          <div class="player1-wrapper">
+            <label for="player1">Player 1:</label>
+            <input class="player-input" type="text" id="player1">
           </div>
+          <div class="player2-wrapper">
+            <label for="player2">Player 2:</label>
+            <input class="player-input" type="text" id="player2">
+          </div>
+        </div>
+      </form>
+      <button class="player-button prepare-self">Prepare Yourself</button>
+    </section>
+    <section class="instructions">
+      <h2>You have been taken captive...</h2>
+      <article class="instruction-content">
+        <p>Masked individuals surround you in an abandoned building. When the hood is removed from your head, you see someone familiar next to you. You both look dishevled and confused.</p>
+        <p>A voice tells you, "Answer our questions, and one of you will get out alive. The first two rounds you will need to guess at the most popular answer. Each of you will get 3 incorrect guesses. Once all answers are revealed, or you each have
+          3 incorrect guesses, the round will end."</p>
+        <p>"The third round will be a rapid fire round. You will each have 30 seconds to guess all of the answers. Incorrect answers don't matter. You can also set a multiplier to your points. Correct guesses get multiplied by that number. Missed
+          guesses will get multiplied, divided in half, then subratcted from your final score."</p>
+      </article>
+      <button class="player-button lets-begin">Lets Begin</button>
+    </section>
+    <section class="game-screen">
+      <aside class="player-screen player1-screen">
+        <h3 class="player1-name"></h3>
+        <p>Total Score: 0</p>
+        <p>Round Score: 0</p>
+        <form>
+          <input class="player1-answer-input" type="text">
+          <button class="submit-answer p1-submit-answer" type="button">Submit Answer</button>
         </form>
-        <button class="player-button prepare-self">Prepare Yourself</button>
-      </section>
-      <section class="instructions">
-        <h2>You have been taken captive...</h2>
-        <article class="instruction-content">
-          <p>Masked individuals surround you in an abandoned building. When the hood is removed from your head, you see someone familiar next to you. You both look dishevled and confused.</p>
-          <p>A voice tells you, "Answer our questions, and one of you will get out alive. The first two rounds you will need to guess at the most popular answer. Each of you will get 3 incorrect guesses. Once all answers are revealed, or you each have 3 incorrect guesses, the round will end."</p>
-          <p>"The third round will be a rapid fire round. You will each have 30 seconds to guess all of the answers. Incorrect answers don't matter. You can also set a multiplier to your points. Correct guesses get multiplied by that number. Missed guesses will get multiplied, divided in half, then subratcted from your final score."</p>
-          </article>
-        <button class="player-button lets-begin">Lets Begin</button>
-      </section>
-      <section class="game-screen">
-        <aside class="player-screen player1-screen">
-          <h3 class="player1-name"></h3>
-          <p>Total Score: 0</p>
-          <p>Round Score: 0</p>
-          <form>
-            <input class="player1-answer-input" type="text">
-            <button class="submit-answer p1-submit-answer" type="button">Submit Answer</button>
-          </form>
-          <div class="player1-multiplier multiplier">Multiplier Selector</div>
-          <p>Incorrect guesses:</p>
-          <div class="player1-wrong-guesses wrong-guesses">
-          </div>
-        </aside>
-        <section class="survey"></section>
-        <aside class="player-screen player2-screen">
-          <h3 class="player2-name"></h3>
-          <p>Total Score: 0</p>
-          <p>Round Score: 0</p>
-          <form>
-            <input class="player2-answer-input" type="text">
-            <button class="submit-answer p2-submit-answer" type="button">Submit Answer</button>
-          </form>
-          <div class="player2-multiplier multiplier">Multiplier Selector</div>
-          <p>Incorrect guesses:</p>
-          <div class="player2-wrong-guesses wrong-guesses">
-          </div>
-        </aside>
-      </section>
+        <div class="player1-multiplier multiplier">Multiplier Selector</div>
+        <p>Incorrect guesses:</p>
+        <div class="player1-wrong-guesses wrong-guesses">
+        </div>
+      </aside>
+      <section class="survey"></section>
+      <aside class="player-screen player2-screen">
+        <h3 class="player2-name"></h3>
+        <p>Total Score: 0</p>
+        <p>Round Score: 0</p>
+        <form>
+          <input class="player2-answer-input" type="text">
+          <button class="submit-answer p2-submit-answer" type="button">Submit Answer</button>
+        </form>
+        <div class="player2-multiplier multiplier">Multiplier Selector</div>
+        <p>Incorrect guesses:</p>
+        <div class="player2-wrong-guesses wrong-guesses">
+        </div>
+      </aside>
+    </section>
     <section class="panic-round">
-        <h2>PlayerName, You have <span class="panic-timer">30</span> Seconds</h2>
-        <div class="panic-round-screen">
-          <aside class="panic-player">
-            <h3>PlayerName</h3>
-            <p>Total Score: 0</p>
-            <p>Round Score: 0</p>
-            <form>
-              <input class="playerp-answer-input" type="text">
-              <button class="submit-answer pp-submit-answer">Submit Answer</button>
-            </form>
-            <label class="playerp-multiplier" for="multiplier-slider">Multiplier Selector:</label>
-            <input class="multiplier" type="range" id="multiplier-slider" name="multiplier-slider" min="1" max="5" value="1" list="multi-list">
-            <datalist id="multi-list">
-              <option value="1"></option>
-              <option value="2"></option>
-              <option value="3"></option>
-              <option value="4"></option>
-              <option value="5"></option>
-            </datalist>
-            <p>Value: <span id="multi-value">1x</span></p>
-            <p>Incorrect guesses:</p>
-            <div class="playerp-wrong-guesses wrong-guesses">
+      <h2>PlayerName, You have <span class="panic-timer">30</span> Seconds</h2>
+      <div class="panic-round-screen">
+        <aside class="panic-player">
+          <h3>PlayerName</h3>
+          <p>Total Score: 0</p>
+          <p>Round Score: 0</p>
+          <form>
+            <input class="playerp-answer-input" type="text">
+            <button class="submit-answer pp-submit-answer">Submit Answer</button>
+          </form>
+          <label class="playerp-multiplier" for="multiplier-slider">Multiplier Selector:</label>
+          <input class="multiplier" type="range" id="multiplier-slider" name="multiplier-slider" min="1" max="5" value="1" list="multi-list">
+          <datalist id="multi-list">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+          </datalist>
+          <p>Value: <span id="multi-value">1x</span></p>
+          <p>Incorrect guesses:</p>
+          <div class="playerp-wrong-guesses wrong-guesses">
+          </div>
+        </aside>
+        <section class="panic-survey">
+          <h2 class="survey-question">survey.question</h2>
+          <div class="survey-answer-wrapper">
+            <div class="survey-answer answer1">
+              <h3>answer</h3>
+              <p>respondents</p>
             </div>
-          </aside>
-          <section class="panic-survey">
-            <h2 class="survey-question">survey.question</h2>
-            <div class="survey-answer-wrapper">
-              <div class="survey-answer answer1">
-                <h3>answer</h3>
-                <p>respondents</p>
-              </div>
-              <div class="survey-answer answer2">
-                <h3>answer</h3>
-                <p>respondents</p>
-              </div>
-              <div class="survey-answer answer3">
-                <h3>answer</h3>
-                <p>respondents</p>
-              </div>
+            <div class="survey-answer answer2">
+              <h3>answer</h3>
+              <p>respondents</p>
             </div>
-          </section>
-        </div>
-      </section>
-      <section class="end-game-screen">
-        <div class="winner-banner">
-          <h2>Congratulations Player</h2>
-          <p>You Survived!</p>
-          <p>Your Score: 0</p>
-        </div>
-        <div class="loser-banner">
-          <p>OtherPlayer has been slaughtered</p>
-          <p>OtherPlayer Score: 0</p>
-        </div>
-        <button class="player-button play-again">Play Again?</button>
-      </section>
-    </main>
-  </body>
+            <div class="survey-answer answer3">
+              <h3>answer</h3>
+              <p>respondents</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section class="end-game-screen">
+      <div class="winner-banner">
+        <h2>Congratulations Player</h2>
+        <p>You Survived!</p>
+        <p>Your Score: 0</p>
+      </div>
+      <div class="loser-banner">
+        <p>OtherPlayer has been slaughtered</p>
+        <p>OtherPlayer Score: 0</p>
+      </div>
+      <button class="player-button play-again">Play Again?</button>
+    </section>
+  </main>
+</body>
+
 </html>
