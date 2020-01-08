@@ -45,51 +45,65 @@
         <button class="player-button lets-begin">Lets Begin</button>
       </section>
       <section class="game-screen">
-        <aside class="player-screen player1-screen">
-          <!-- <h3>Player 1 Name</h3>
-          <p>Total Score: 58</p>
-          <p>Round Score: 10</p>
-          <form>
-            <input class="player1-answer-input" type="text">
-            <button class="submit-answer">Submit Answer</button>
-          </form>
-          <div class="player1-multiplier multiplier">Multiplier Selector</div>
-          <p>Incorrect guesses:</p>
-          <div class="player1-wrong-guesses wrong-guesses">
-            <span><span>Blah</span></span>
-          </div> -->
-        </aside>
-        <section class="survey">
-          <!-- <h2 class="survey-question">Interpolated Survey Question</h2>
-          <div class="survey-answer-wrapper">
-            <div class="survey-answer">
-              <h3>Answer 1</h3>
-              <p>50</p>
+        <aside class="player-screen player1-screen"></aside>
+        <section class="survey"></section>
+        <aside class="player-screen player2-screen"></aside>
+      </section>
+      <section class="panic-round">
+        <h2>PlayerName, You have <span class="panic-timer">30</span> Seconds</h2>
+        <div class="panic-round-screen">
+          <aside class="panic-player">
+            <h3>PlayerName</h3>
+            <p>Total Score: 0</p>
+            <p>Round Score: 0</p>
+            <form>
+              <input class="playerp-answer-input" type="text">
+              <button class="submit-answer pp-submit-answer">Submit Answer</button>
+            </form>
+            <label class="playerp-multiplier" for="multiplier-slider">Multiplier Selector:</label>
+            <input class="multiplier" type="range" id="multiplier-slider" name="multiplier-slider" min="1" max="5" value="1" list="multi-list">
+            <datalist id="multi-list">
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+              <option value="4"></option>
+              <option value="5"></option>
+            </datalist>
+            <p>Value: <span id="multi-value">1x</span></p>
+            <p>Incorrect guesses:</p>
+            <div class="playerp-wrong-guesses wrong-guesses">
             </div>
-            <div class="survey-answer">
-              <h3>Answer 2</h3>
-              <p>50</p>
+          </aside>
+          <section class="panic-survey">
+            <h2 class="survey-question">survey.question</h2>
+            <div class="survey-answer-wrapper">
+              <div class="survey-answer answer1">
+                <h3>answer</h3>
+                <p>respondents</p>
+              </div>
+              <div class="survey-answer answer2">
+                <h3>answer</h3>
+                <p>respondents</p>
+              </div>
+              <div class="survey-answer answer3">
+                <h3>answer</h3>
+                <p>respondents</p>
+              </div>
             </div>
-            <div class="survey-answer">
-              <h3>Answer 3</h3>
-              <p>50</p>
-            </div>
-          </div> -->
-        </section>
-        <aside class="player-screen player2-screen">
-          <!-- <h3>Player 2 Name</h3>
-          <p>Total Score: 58</p>
-          <p>Round Score: 10</p>
-          <form>
-            <input class="player2-answer-input" type="text">
-            <button class="submit-answer">Submit Answer</button>
-          </form>
-          <div class="player2-multiplier multiplier">Multiplier Selector</div>
-          <p>Incorrect guesses:</p>
-          <div class="player1-wrong-guesses wrong-guesses">
-            <span><span>Blah</span></span>
-          </div> -->
-        </aside>
+          </section>
+        </div>
+      </section>
+      <section class="end-game-screen">
+        <div class="winner-banner">
+          <h2>Congratulations Player</h2>
+          <p>You Survived!</p>
+          <p>Your Score: 0</p>
+        </div>
+        <div class="loser-banner">
+          <p>OtherPlayer has been slaughtered</p>
+          <p>OtherPlayer Score: 0</p>
+        </div>
+        <button class="player-button play-again">Play Again?</button>
       </section>
     </main>
   </body>
