@@ -4,7 +4,7 @@ import {clearInput, updatePlayerTotalScore} from './domUpdates.js';
 class Player {
   constructor(playerName, playerNum) {
     this.totalPoints = 0;
-    this.lastCorrectGuessPoints = 0
+    this.lastCorrectGuessPoints = 0;
     this.name = playerName;
     this.playerNum = playerNum;
     this.incorrectGuesses = [];
@@ -16,11 +16,11 @@ class Player {
       clearInput(this.playerNum);
       this.addPoints(survey.findPoints(playerGuess));
       updatePlayerTotalScore(this.playerNum, this.totalPoints);
-      return trueFalse;
+      return [trueFalse, playerGuess];
     } else {
       clearInput(this.playerNum);
       this.incorrectGuesses.push(playerGuess);
-      return trueFalse;
+      return [trueFalse, playerGuess];
     }
   }
   addPoints(pointValue) {
