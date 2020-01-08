@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Game from './Game.js';
 import Survey from './Survey.js';
+import {enableAnswerInput, disableAnswerInput, updatePlayerRoundScore} from './domUpdates.js';
 
 
 class Round {
@@ -35,7 +36,6 @@ class Round {
   takeTurn(guessResult, survey) {
     let selectedPlayer = this.players[parseInt(this.currentPlayer - 1)];
     let trueFalse = selectedPlayer.makeGuess(guessResult, survey);
-    console.log(trueFalse);
     let player = this.players.filter(player => {
       return player.playerNum !== this.currentPlayer;
     })
@@ -46,14 +46,15 @@ class Round {
       console.log(this.correctGuesses);
     } else {
       this.guessFlag = false;
+      disableAnswerInput(this.currentPlayer);
       this.currentPlayer = player[0].playerNum;
-      console.log(this.players[0].incorrectGuesses);
-      console.log(this.players[1].incorrectGuesses);
+      enableAnswerInput(this.currentPlayer);
     }
     this.endRound();
   }
   addPlayerRoundScore(selectedPlayer) {
     this.points[`player${this.currentPlayer}`] += selectedPlayer.lastCorrectGuessPoints;
+    updatePlayerRoundScore(this.currentPlayer, this.points[`player${this.currentPlayer}`]);
   }
   endRound() {
     if (this.correctGuesses.length === 3) {

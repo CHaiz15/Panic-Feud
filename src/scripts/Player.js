@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import {clearInput, updatePlayerTotalScore} from './domUpdates.js';
 
 class Player {
   constructor(playerName, playerNum) {
@@ -12,9 +13,12 @@ class Player {
   makeGuess(playerGuess, survey) {
     let trueFalse = survey.checkGuess(playerGuess)
     if(trueFalse) {
+      clearInput(this.playerNum);
       this.addPoints(survey.findPoints(playerGuess));
+      updatePlayerTotalScore(this.playerNum, this.totalPoints);
       return [trueFalse, playerGuess];
     } else {
+      clearInput(this.playerNum);
       this.incorrectGuesses.push(playerGuess);
       return [trueFalse, playerGuess];
     }

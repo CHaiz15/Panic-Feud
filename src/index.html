@@ -49,29 +49,27 @@
       <button class="player-button lets-begin">Lets Begin</button>
     </section>
     <section class="game-screen">
-      <aside class="player-screen player1-screen">
+      <aside class="player-screen player1-screen inactive-player">
         <h3 class="player1-name"></h3>
-        <p>Total Score: 0</p>
-        <p>Round Score: 0</p>
+        <p>Total Score: <span class="player1-total-score">0</span></p>
+        <p>Round Score: <span class="player1-round-score">0</span></p>
         <form>
-          <input class="player1-answer-input" type="text">
-          <button class="submit-answer p1-submit-answer" type="button">Submit Answer</button>
+          <input class="player1-answer-input" type="text" disabled="true">
+          <button class="submit-answer p1-submit-answer" type="button" disabled="true">Submit Answer</button>
         </form>
-        <div class="player1-multiplier multiplier">Multiplier Selector</div>
         <p>Incorrect guesses:</p>
         <div class="player1-wrong-guesses wrong-guesses">
         </div>
       </aside>
       <section class="survey"></section>
-      <aside class="player-screen player2-screen">
+      <aside class="player-screen player2-screen inactive-player">
         <h3 class="player2-name"></h3>
-        <p>Total Score: 0</p>
-        <p>Round Score: 0</p>
+        <p>Total Score: <span class="player2-total-score">0</span></p>
+        <p>Round Score: <span class="player2-round-score">0</span></p>
         <form>
-          <input class="player2-answer-input" type="text">
-          <button class="submit-answer p2-submit-answer" type="button">Submit Answer</button>
+          <input class="player2-answer-input" type="text" disabled="true">
+          <button class="submit-answer p2-submit-answer" type="button" disabled="true">Submit Answer</button>
         </form>
-        <div class="player2-multiplier multiplier">Multiplier Selector</div>
         <p>Incorrect guesses:</p>
         <div class="player2-wrong-guesses wrong-guesses">
         </div>
