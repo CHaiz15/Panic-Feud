@@ -10,6 +10,7 @@ class Round {
     this.players = players;
     this.guessFlag = false;
     this.currentSurvey = survey;
+    this.correctGuesses = [];
   }
   createSurvey() {
     let foundSurvey;
@@ -38,23 +39,28 @@ class Round {
     let player = this.players.filter(player => {
       return player.playerNum !== this.currentPlayer;
     })
-    if (trueFalse) {
+    if (trueFalse[0]) {
       this.guessFlag = true;
       this.addPlayerRoundScore(selectedPlayer);
-      console.log(this.points);
+      this.correctGuesses.push(trueFalse[1]);
+      console.log(this.correctGuesses);
     } else {
       this.guessFlag = false;
       this.currentPlayer = player[0].playerNum;
-      console.log(this.points);
+      console.log(this.players[0].incorrectGuesses);
+      console.log(this.players[1].incorrectGuesses);
     }
+    this.endRound();
   }
-
-  // setStartingPlayer() {
-  //   this.currentPlayer++;
-  // }
-
   addPlayerRoundScore(selectedPlayer) {
     this.points[`player${this.currentPlayer}`] += selectedPlayer.lastCorrectGuessPoints;
+  }
+  endRound() {
+    if (this.correctGuesses.length === 3) {
+      console.log('first');
+    } else if (this.players[0].incorrectGuesses.length && this.players[1].incorrectGuesses.length === 3) {
+      console.log('second');
+    }
   }
 }
 
