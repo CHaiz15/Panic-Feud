@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Round from './Round.js';
 import Survey from './Survey.js';
+import {enableAnswerInput} from './domUpdates.js';
 
 
 
@@ -17,11 +18,10 @@ class Game {
       // needs refactor based on survey instantiation
       startPanicRound(this.currentSurvey);
     } else if (this.usedSurveyIds.length === 1) {
-      console.log(this.usedSurveyIds.length);
       this.currentRound = new Round(this.surveys, this.players, 2);
     } else {
-      console.log(this.usedSurveyIds.length);
       this.currentRound = new Round(this.surveys, this.players, 1);
+      enableAnswerInput(this.currentRound.currentPlayer);
     }
     this.usedSurveyIds.push(this.currentRound.currentSurvey.id);
   }

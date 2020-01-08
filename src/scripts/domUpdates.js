@@ -18,6 +18,14 @@ $('.lets-begin').click(function() {
     .fadeIn(500);
 });
 
+$('.end-round-button').click(function () {
+  
+})
+
+$('.multiplier').on('change', function() {
+  $('#multi-value').text($('.multiplier').val() + 'x');
+})
+
 export const populateSurveyAndAnswers = (survey) => {
   $('.survey').html(`
   <h2 class="survey-question">${survey.question}</h2>
@@ -42,6 +50,28 @@ export const populatePlayerInformation = (player, num) => {
   $(`.player${num}-name`).text(`${player.name}`);
 }
 
-$('.multiplier').on('change', function() {
-  $('#multi-value').text($('.multiplier').val() + 'x');
-})
+export const clearInput = (playerNum) => {
+  $(`.player${playerNum}-answer-input`).val('');
+}
+
+export const disableAnswerInput = (playerNum) => {
+  $(`.player${playerNum}-answer-input`).prop('disabled', true);
+  $(`.player${playerNum}-submit-answer`).prop('disabled', true);
+  $(`.player${playerNum}-screen`).removeClass('player-glow');
+  $(`.player${playerNum}-screen`).addClass('inactive-player');
+}
+
+export const enableAnswerInput = (playerNum) => {
+  $(`.player${playerNum}-answer-input`).prop('disabled', false);
+  $(`.p${playerNum}-submit-answer`).prop('disabled', false);
+  $(`.player${playerNum}-screen`).addClass('player-glow');
+  $(`.player${playerNum}-screen`).removeClass('inactive-player');
+}
+
+export const updatePlayerTotalScore = (playerNum, score) => {
+  $(`.player${playerNum}-total-score`).text(`${score}`);
+}
+
+export const updatePlayerRoundScore = (playerNum, score) => {
+  $(`.player${playerNum}-round-score`).text(`${score}`);
+}
