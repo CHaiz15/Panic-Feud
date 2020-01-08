@@ -236,6 +236,7 @@ main {
 }
 
 .panic-round {
+  display: none;
   height: calc(100vh - 75px);
 }
 
@@ -271,7 +272,7 @@ main {
 
 .end-game-screen {
   @include columnFlexCenter();
-  // display: none;
+  display: none;
   height: calc(100vh - 75px);
   text-align: center;
 }
