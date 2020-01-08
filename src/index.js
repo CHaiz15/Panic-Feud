@@ -45,7 +45,6 @@ $('.prepare-self').click(function() {
 
 $('.lets-begin').click(function() {
   game.startRound();
-  game.currentRound.createSurvey();
   populateSurveyAndAnswers(game.currentRound.currentSurvey);
   populatePlayerInformation(game.players[0], 1);
   populatePlayerInformation(game.players[1], 2);
@@ -61,4 +60,11 @@ $('.p2-submit-answer').click(function() {
 
 $('.pp-submit-answer').click(function() {
   game.currentRound.panicGuess($('.playerp-answer-input').val(), game.currentRound.currentSurvey)
+})
+
+$('.end-round-button').click(function () {
+  $('.end-round-wrap').css('display', 'none');
+  game.startRound();
+  populateSurveyAndAnswers(game.currentRound.currentSurvey);
+  // console.log(game.usedSurveyIds);
 })

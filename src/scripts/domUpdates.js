@@ -18,16 +18,12 @@ $('.lets-begin').click(function() {
     .fadeIn(500);
 });
 
-$('.end-round-button').click(function () {
-  
-})
-
 $('.multiplier').on('change', function() {
   $('#multi-value').text($('.multiplier').val() + 'x');
 })
 
 export const populateSurveyAndAnswers = (survey) => {
-  $('.survey').html(`
+  $('.survey').css('display', 'flex').html(`
   <h2 class="survey-question">${survey.question}</h2>
     <div class="survey-answer-wrapper">
       <div class="survey-answer answer1">
@@ -74,4 +70,21 @@ export const updatePlayerTotalScore = (playerNum, score) => {
 
 export const updatePlayerRoundScore = (playerNum, score) => {
   $(`.player${playerNum}-round-score`).text(`${score}`);
+}
+
+export const endOfRound = () => {
+  $('.end-round-wrap').css('display', 'flex');
+  $('.survey').css('display','none').html('');
+}
+
+export const showPanicRoundScreen = () => {
+  $('.game-screen').css('display', 'none');
+  $('.panic-round').css('display', 'flex');
+}
+
+export const populatePanicPlayerInfo = (player) => {
+  $(`.panic-player-info`).html(`
+    <h3>${player.name}</h3>
+    <p>Total Score: ${player.totalPoints}</p>
+  `);
 }

@@ -9,6 +9,7 @@ class Player {
     this.playerNum = playerNum;
     this.incorrectGuesses = [];
     this.multiplier = 0;
+    this.playedPanic = false;
   }
   makeGuess(playerGuess, survey) {
     let trueFalse = survey.checkGuess(playerGuess)

@@ -39,7 +39,6 @@ class PanicRound {
   }
   endPanicRound() {
     if(this.timer === 0) {
-      // tie with graysons shit
     }
   }
   startTimer() {

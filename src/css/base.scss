@@ -238,6 +238,11 @@ main {
   transition: text-shadow 1s ease, filter 1s ease;
 }
 
+.end-round-wrap {
+  @include columnFlexCenter();
+  display: none;
+}
+
 /* ********** PANIC ROUND SCREEN ********** */
 
 .panic-round,

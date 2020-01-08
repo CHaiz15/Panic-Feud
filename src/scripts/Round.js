@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Game from './Game.js';
 import Survey from './Survey.js';
-import {enableAnswerInput, disableAnswerInput, updatePlayerRoundScore} from './domUpdates.js';
+import {enableAnswerInput, disableAnswerInput, updatePlayerRoundScore, endOfRound} from './domUpdates.js';
 
 
 class Round {
@@ -43,7 +43,6 @@ class Round {
       this.guessFlag = true;
       this.addPlayerRoundScore(selectedPlayer);
       this.correctGuesses.push(trueFalse[1]);
-      console.log(this.correctGuesses);
     } else {
       this.guessFlag = false;
       disableAnswerInput(this.currentPlayer);
@@ -58,9 +57,9 @@ class Round {
   }
   endRound() {
     if (this.correctGuesses.length === 3) {
-      console.log('first');
+      endOfRound();
     } else if (this.players[0].incorrectGuesses.length && this.players[1].incorrectGuesses.length === 3) {
-      console.log('second');
+      endOfRound();
     }
   }
 }

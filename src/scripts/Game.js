@@ -1,7 +1,8 @@
 import $ from 'jquery';
 import Round from './Round.js';
 import Survey from './Survey.js';
-import {enableAnswerInput} from './domUpdates.js';
+import PanicRound from './PanicRound.js';
+import {enableAnswerInput, disableAnswerInput, showPanicRoundScreen, populatePanicPlayerInfo} from './domUpdates.js';
 
 
 
@@ -14,26 +15,34 @@ class Game {
   }
   startRound() {
     if (this.usedSurveyIds.length === 3) {
-      startPanicRound();
+      this.startPanicRound();
     } else if (this.usedSurveyIds.length === 2) {
-      startPanicRound();
+      this.startPanicRound();
     } else if (this.usedSurveyIds.length === 1) {
       this.currentRound = new Round(this.surveys, this.players, 2);
+      enableAnswerInput(this.currentRound.currentPlayer)
+      disableAnswerInput(1)
     } else {
       this.currentRound = new Round(this.surveys, this.players, 1);
       enableAnswerInput(this.currentRound.currentPlayer);
     }
+    this.currentRound.createSurvey();
     this.usedSurveyIds.push(this.currentRound.currentSurvey.id);
   }
+
   startPanicRound() {
     let panicPlayer;
     if ((this.players[0].totalPoints > this.players[1].totalPoints) && this.players[0].playedPanic === false) {
       panicPlayer = this.players[0];
+      this.players[0].playedPanic = true;
     } else if ((this.players[1].totalPoints > this.players[0].totalPoints) && this.players[1].playedPanic === false) {
-    panicPlayer = this.players[1];
+      panicPlayer = this.players[1];
+      this.players[1].playedPanic = true;
+    }
+    this.currentRound = new PanicRound(this.surveys, panicPlayer);
+    showPanicRoundScreen();
+    populatePanicPlayerInfo(panicPlayer);
   }
-  this.currentRound = new PanicRound(this.surveys, panicPlayer);
-}
 endGame() {
   // Invoke display endGame function to Display the winner on the DOM.
 
