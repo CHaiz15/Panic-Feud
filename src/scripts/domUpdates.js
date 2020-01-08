@@ -53,3 +53,7 @@ export const populatePlayerInformation = (player, num) => {
     </div>
   `)
 }
+
+$('.multiplier').on('change', function() {
+  $('#multi-value').text($('.multiplier').val() + 'x');
+})
